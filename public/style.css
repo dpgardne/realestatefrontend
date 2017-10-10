@@ -1,0 +1,65 @@
+.input {
+  margin: 15px;
+  padding: 10px;
+  border-color: 1px solid gray;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+header {
+  min-width: 960px;
+  background-color: #D9FF5B;
+}
+
+.btn {
+  background-color: #78AA00;
+  border-color: #78AA00;
+}
+
+header .logo {
+  color: #78AA00;
+  padding: 10px 2px 2px 20px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.submit {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px dotted gray;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.column {
+  flex-basis: 25%;
+  margin: 5px;
+
+}
+
+.glyphicon{
+  cursor: pointer;
+  color: red;
+}
+
+.search {
+  min-width: 500px;
+  width: 650px;
+  height: 50px;
+  margin: 5px 20px 5px 20px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.properties {
+  margin-left: 20px;
+  margin-top: 30px;
+}

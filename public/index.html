@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='real'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" charset="utf-8"></script>
+  <title>Real estate tracker</title>
+</head>
+<body ng-controller='mainController as ctrl'>
+  <!-- post new house -->
+  <header>
+  <h4 class="logo">Property Manager V.2.3</h4>
+  <form ng-submit="ctrl.processForm()">
+    <input type="text" ng-model="ctrl.formdata.title"placeholder="Title" class="input"/>
+    <input type="text" ng-model="ctrl.formdata.address" placeholder="Property Address" class="input"/>
+    <input type="text" ng-model="ctrl.formdata.selling_price" placeholder="Selling Price" class="input"/>
+    <input class="btn btn-primary btn-sm submit" type="submit"/>
+  </form>
+  </header>
+  <!-- post new house -->
+  <!-- get request to show -->
+
+    <input class="form-control search" ng-model="searchText" placeholder="Search by title keyword, address, or price: Ex: 2bd">
+    <h4 class="properties">Current properties listed</h4>
+  <!-- display properties -->
+  <div ng-repeat="house in ctrl.houses | filter:searchText" class="row">
+    <h3 class="column">{{house.title}}</h3>
+    <p class="column">{{house.address}}</p>
+    <p class="column">{{house.selling_price | currency: "$"}}</p>
+    <span ng-click="ctrl.deleteHouse(house)" class="glyphicon glyphicon-remove"></span>
+  </div>
+<!-- <button ng-click="updateData()">Refresh Data</button> -->
+</body>
+</html>
