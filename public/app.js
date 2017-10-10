@@ -4,10 +4,10 @@ const app = angular.module('real', []);
   const controller = this;
   this.message = "hi, I am from the controller"
   this.houses = [];
-  this.URL = 'https://mypropertymanager.herokuapp.com/houses'
+  // this.URL = 'https://mypropertymanager.herokuapp.com/houses';
   $http({
         method: 'GET',
-        url: this.URL,
+        url: 'https://mypropertymanager.herokuapp.com/houses',
       }).then(response => {
         console.log(response.data.houses);
         this.houses = response.data.houses
@@ -18,7 +18,7 @@ const app = angular.module('real', []);
         console.log(this.formdata)
         $http({
           method: 'POST',
-          url: this.URL,
+          url: 'https://mypropertymanager.herokuapp.com/houses',
           data: this.formdata
         }).then(response => {
           console.log(response);
@@ -31,7 +31,7 @@ const app = angular.module('real', []);
         this.deleteHouse = function(house){
         $http({
           method: 'DELETE',
-          url: this.URL + house.id //house._id in mean app
+          url: 'https://mypropertymanager.herokuapp.com/houses' + house.id //house._id in mean app
         }).then(
           function(res){
             // this.processForm();
